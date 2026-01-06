@@ -1,0 +1,79 @@
+controller & Routes research :
+
+###PART 1####
+
+# What is a Controller in Laravel?
+-controller in laravel is a class that handles user requests and returns responses
+
+#Why do we use Controllers instead of writing logic directly in routes?
+-we use Controllers to keep code organized, clean, and easier to maintain.
+
+#Where are Controllers located in Laravel?
+- app/Http/Controllers folder
+
+#Types of Controllers:
+-Basic Controller :- Handles simple requests and returns responses
+-Resource Controller :- Manages CRUD (create, read, update, delete) automatically
+-single Action Controller :- Has only one method to handle a request
+
+#Naming conventions for controllers
+-descriptive names and end with Controller also should use PascalCase
+
+# What is the role of a controller inside MVC?
+ is to handle user requests, interact with the model, and send data to the view
+
+________________________________________________________
+
+###PART 3####
+
+#What happens when you visit /about?
+- the Laravel runs the about method in PageController and then show its view
+
+#Who decides which method will be executed?
+-The Route decides 
+
+#Where is the view rendered?
+-from the resources/views folder.
+
+________________________________________________________
+
+###PART 4####
+
+The{name} in the url is a route parameter
+1-when you vist user/ahmad , Laravel takes ahmad from the url and sends it to the
+user($name) method in the controller 
+2- the controller passes it to the view as $username
+3-in user.blade.php , you will display $username.
+________________________________________________________
+
+###PART 6####
+
+#What is a Resource Controller?
+-resource controller is a controller that automatically handles all CRUD actions.
+
+#What methods does it generate automatically?
+-it generate these method automatically :- index(),create(),store(),show(),edit(),update(),destroy()
+
+#Why is it useful in CRUD systems?
+-it is useful because it saves time and organize crud login in one controller 
+
+________________________________________________________
+
+###PART 7####
+
+Normal Controller routes :- you create each route manually for every method.
+Resource Controller routes :– Laravel creates 7 routes automatically for all CRUD actions.
+
+#How many routes were created automatically? 7
+#When should we use a resource controller? when we need full CRUD operations.
+# the difference :  normal routes are manual, resource routes are automatic and organized for CRUD.
+
+
+#When should I use a **normal controller**?
+Use a normal controller for simple or custom actions that don’t need full CRUD.
+
+#When should I use a **resource controller**?
+Use a resource controller when you need all CRUD actions (Create, Read, Update, Delete).
+
+#What is the full request flow?
+Full request flow: User => Route => Controller => Model (optional) => View => User.
